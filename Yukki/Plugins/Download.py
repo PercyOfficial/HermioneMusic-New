@@ -29,6 +29,8 @@ Only for Sudo Users.
 
 /ungban [Username or Reply to a user]
 - Remove a user from Bot's GBan List.
+
+**Not For You**
 """
 
 
