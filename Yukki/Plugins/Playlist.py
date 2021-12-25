@@ -152,14 +152,14 @@ options = [
 ]
 
 options_Genre = [
-    "Rock",
-    "Sad",
-    "Party",
-    "Lofi",
-    "Bollywood",
-    "Hollywood",
-    "Punjabi",
-    "Others",
+    "sɪɴʜᴀʟᴀ 🇱🇰",
+    "ʙᴛs 💜",
+    "ᴘᴀʀᴛʏ 🥳",
+    "ʀᴀᴘ ⚡",
+    "ʙᴏʟʟʏᴡᴏᴏᴅ 🇮🇪",
+    "ʜᴏʟʟʏᴡᴏᴏᴅ 📽️",
+    "ᴅᴊ-ʀᴇᴍɪx 💃",
+    "ᴏᴛʜᴇʀ 🤔",
 ]
 
 
