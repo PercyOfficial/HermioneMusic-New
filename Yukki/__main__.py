@@ -13,8 +13,7 @@ from pyrogram import __version__ as pyrover
 from pytgcalls.__version__ import __version__ as pytgver
 from youtubesearchpython import VideosSearch
 
-from Yukki import (ASSID, ASSMENTION, ASSNAME, ASSUSERNAME, BOT_ID, BOT_NAME, SUPPORT_GROUP_ID, BOTS_GROUP_ID,
-                   BOT_USERNAME, SUDOERS, app, db, pymongodb, userbot)
+from Yukki import (ASSID, ASSMENTION, ASSNAME, ASSUSERNAME, BOT_ID, BOT_NAME, SUPPORT_GROUP_ID, BOT_USERNAME, SUDOERS, app, db, pymongodb, userbot)
 from Yukki.Core.Logger.Log import (startup_delete_last, startup_edit_last,
                                    startup_send_new)
 from Yukki.Core.PyTgCalls.Yukki import run
@@ -86,7 +85,7 @@ async def initiate_bot():
     try:
         await app.send_message(LOG_GROUP_ID, "<b>✅ bot started successfully!</b>",)
         await app.send_message(SUPPORT_GROUP_ID, f"**Anki Vector Music Started successfully**\n\n**Python:** `{pyver.split()[0]}`\n**Pyrogram:** `{pyrover}`\n**PyTgCalls:** `{pytgver}`\n**Loaded modules:** `{len(ALL_MODULES)}`")
-        await app.send_message(BOTS_GROUP_ID, f"**Anki Vector Music Started successfully**\n\n**Python:** `{pyver.split()[0]}`\n**Pyrogram:** `{pyrover}`\n**PyTgCalls:** `{pytgver}`\n**Loaded modules:** `{len(ALL_MODULES)}`")        
+#       await app.send_message(BOTS_GROUP_ID, f"**Anki Vector Music Started successfully**\n\n**Python:** `{pyver.split()[0]}`\n**Pyrogram:** `{pyrover}`\n**PyTgCalls:** `{pytgver}`\n**Loaded modules:** `{len(ALL_MODULES)}`")        
     except Exception as e:
         print(
             "Bot has failed to access the log Channel. Make sure that you have added your bot to your log channel and promoted as admin!"
