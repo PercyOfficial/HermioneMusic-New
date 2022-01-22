@@ -8,9 +8,12 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from rich.console import Console
 from rich.table import Table
+from sys import version as pyver
+from pyrogram import __version__ as pyrover
+from pytgcalls.__version__ import __version__ as pytgver
 from youtubesearchpython import VideosSearch
 
-from Yukki import (ASSID, ASSMENTION, ASSNAME, ASSUSERNAME, BOT_ID, BOT_NAME, SUPPORT_GROUP_ID,
+from Yukki import (ASSID, ASSMENTION, ASSNAME, ASSUSERNAME, BOT_ID, BOT_NAME, SUPPORT_GROUP_ID, BOTS_GROUP_ID,
                    BOT_USERNAME, SUDOERS, app, db, pymongodb, userbot)
 from Yukki.Core.Logger.Log import (startup_delete_last, startup_edit_last,
                                    startup_send_new)
@@ -78,11 +81,13 @@ async def initiate_bot():
         await asyncio.sleep(2.4)
         await startup_delete_last(_____)
     console.print(
-        "[bold green]Congrats!! Hermione Music Bot has started successfully!\n"
+        "[bold green]Congrats!! Anki Vector Music Bot has started successfully!\n"
     )
     try:
-        await app.send_message(LOG_GROUP_ID, "<b>✅ Bot started successfully!</b>",)
-        except Exception as e:
+        await app.send_message(LOG_GROUP_ID, "<b>✅ bot started successfully!</b>",)
+        await app.send_message(SUPPORT_GROUP_ID, f"**Anki Vector Music Started successfully**\n\n**Python:** `{pyver.split()[0]}`\n**Pyrogram:** `{pyrover}`\n**PyTgCalls:** `{pytgver}`\n**Loaded modules:** `{len(ALL_MODULES)}`")
+        await app.send_message(BOTS_GROUP_ID, f"**Anki Vector Music Started successfully**\n\n**Python:** `{pyver.split()[0]}`\n**Pyrogram:** `{pyrover}`\n**PyTgCalls:** `{pytgver}`\n**Loaded modules:** `{len(ALL_MODULES)}`")        
+    except Exception as e:
         print(
             "Bot has failed to access the log Channel. Make sure that you have added your bot to your log channel and promoted as admin!"
         )
@@ -123,7 +128,7 @@ I'm Telegram Voice Chat Audio with some useful features.
 All commands can be used with: / """
 
 
-@app.on_message(filters.command("mhelp") & filters.private)
+@app.on_message(filters.command("vchelp") & filters.private)
 async def help_command(_, message):
     text, keyboard = await help_parser(message.from_user.mention)
     await app.send_message(message.chat.id, text, reply_markup=keyboard)
@@ -229,13 +234,13 @@ async def shikhar(_, CallbackQuery):
     await CallbackQuery.message.edit(text, reply_markup=keyboard)
 
 
-@app.on_callback_query(filters.regex(r"mhelp_(.*?)"))
+@app.on_callback_query(filters.regex(r"vchelp_(.*?)"))
 async def help_button(client, query):
-    home_match = re.match(r"mhelp_home\((.+?)\)", query.data)
-    mod_match = re.match(r"mhelp_module\((.+?)\)", query.data)
-    prev_match = re.match(r"mhelp_prev\((.+?)\)", query.data)
-    next_match = re.match(r"mhelp_next\((.+?)\)", query.data)
-    back_match = re.match(r"mhelp_back", query.data)
+    home_match = re.match(r"vchelp_home\((.+?)\)", query.data)
+    mod_match = re.match(r"vchelp_module\((.+?)\)", query.data)
+    prev_match = re.match(r"vchelp_prev\((.+?)\)", query.data)
+    next_match = re.match(r"vchelp_next\((.+?)\)", query.data)
+    back_match = re.match(r"vchelp_back", query.data)
     create_match = re.match(r"help_create", query.data)
     top_text = f"""Hello {query.from_user.first_name},
 
@@ -255,7 +260,7 @@ All commands can be used with: /
             [
                 [
                     InlineKeyboardButton(
-                        text="↪️ Back", callback_data="mhelp_back"
+                        text="↪️ Back", callback_data="vchelp_back"
                     )
                 ],
             ]
@@ -279,7 +284,7 @@ All commands can be used with: /
         await query.message.edit(
             text=top_text,
             reply_markup=InlineKeyboardMarkup(
-                paginate_modules(curr_page - 1, HELPABLE, "mhelp")
+                paginate_modules(curr_page - 1, HELPABLE, "vchelp")
             ),
             disable_web_page_preview=True,
         )
@@ -289,7 +294,7 @@ All commands can be used with: /
         await query.message.edit(
             text=top_text,
             reply_markup=InlineKeyboardMarkup(
-                paginate_modules(next_page + 1, HELPABLE, "mhelp")
+                paginate_modules(next_page + 1, HELPABLE, "vchelp")
             ),
             disable_web_page_preview=True,
         )
@@ -298,7 +303,7 @@ All commands can be used with: /
         await query.message.edit(
             text=top_text,
             reply_markup=InlineKeyboardMarkup(
-                paginate_modules(0, HELPABLE, "mhelp")
+                paginate_modules(0, HELPABLE, "vchelp")
             ),
             disable_web_page_preview=True,
         )
