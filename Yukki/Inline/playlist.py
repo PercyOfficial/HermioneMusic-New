@@ -40,41 +40,41 @@ def play_genre_playlist(user_id, type, videoid):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"Bollywood",
+                text=f"ʙᴏʟʟʏᴡᴏᴏᴅ 🇮",
                 callback_data=f"play_playlist {user_id}|{type}|Bollywood",
             ),
             InlineKeyboardButton(
-                text=f"Hollywood",
+                text=f"ʜᴏʟʟʏᴡᴏᴏᴅ📽️",
                 callback_data=f"play_playlist {user_id}|{type}|Hollywood",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=f"Party",
+                text=f"ᴘᴀʀᴛʏ🥳",
                 callback_data=f"play_playlist {user_id}|{type}|Party",
             ),
             InlineKeyboardButton(
-                text=f"Rap",
+                text=f"ʀᴀᴘ⚡",
                 callback_data=f"play_playlist {user_id}|{type}|Rap",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=f"Bts",
+                text=f"ʙᴛs💜",
                 callback_data=f"play_playlist {user_id}|{type}|Bts",
             ),
             InlineKeyboardButton(
-                text=f"Sinhala",
+                text=f"sɪɴʜᴀʟᴀ🇱🇰",
                 callback_data=f"play_playlist {user_id}|{type}|Sinhala",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=f"Remix",
+                text=f"ᴅᴊ-ʀᴇᴍɪx💃",
                 callback_data=f"play_playlist {user_id}|{type}|Remix",
             ),
             InlineKeyboardButton(
-                text=f"Others",
+                text=f"ᴏᴛʜᴇʀ🤔",
                 callback_data=f"play_playlist {user_id}|{type}|Others",
             ),
         ],
@@ -93,7 +93,7 @@ def add_genre_markup(user_id, type, videoid):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"ᴇɪɴʜᴀʟᴀ🇱🇰",
+                text=f"sɪɴʜᴀʟᴀ🇱🇰",
                 callback_data=f"add_playlist {videoid}|{type}|Sinhala",
             ),
             InlineKeyboardButton(
@@ -107,7 +107,7 @@ def add_genre_markup(user_id, type, videoid):
                 callback_data=f"add_playlist {videoid}|{type}|Party",
             ),
             InlineKeyboardButton(
-                text=f"ʀᴀᴘ ⚡",
+                text=f"ʀᴀᴘ⚡",
                 callback_data=f"add_playlist {videoid}|{type}|Rap",
             ),
         ],
@@ -117,17 +117,17 @@ def add_genre_markup(user_id, type, videoid):
                 callback_data=f"add_playlist {videoid}|{type}|Bollywood",
             ),
             InlineKeyboardButton(
-                text=f"ʜᴏʟʟʏᴡᴏᴏᴅ 📽️",
+                text=f"ʜᴏʟʟʏᴡᴏᴏᴅ📽️",
                 callback_data=f"add_playlist {videoid}|{type}|Hollywood",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=f"ᴅᴊ-ʀᴇᴍɪx 💃",
+                text=f"ᴅᴊ-ʀᴇᴍɪx💃",
                 callback_data=f"add_playlist {videoid}|{type}|Remix",
             ),
             InlineKeyboardButton(
-                text=f"Others🎸",
+                text=f"ᴏᴛʜᴇʀ🤔",
                 callback_data=f"add_playlist {videoid}|{type}|Others",
             ),
         ],
@@ -145,37 +145,37 @@ def check_genre_markup(type, videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"Sinhala", callback_data=f"check_playlist {type}|Sinhala"
+                text=f"sɪɴʜᴀʟᴀ🇱🇰", callback_data=f"check_playlist {type}|Sinhala"
             ),
             InlineKeyboardButton(
-                text=f"Bts", callback_data=f"check_playlist {type}|BTS"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text=f"Party", callback_data=f"check_playlist {type}|Party"
-            ),
-            InlineKeyboardButton(
-                text=f"Rap", callback_data=f"check_playlist {type}|Rap"
+                text=f"ʙᴛs💜", callback_data=f"check_playlist {type}|BTS"
             ),
         ],
         [
             InlineKeyboardButton(
-                text=f"Bollywood",
+                text=f"ᴘᴀʀᴛʏ🥳", callback_data=f"check_playlist {type}|Party"
+            ),
+            InlineKeyboardButton(
+                text=f"ʀᴀᴘ⚡", callback_data=f"check_playlist {type}|Rap"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=f"ʙᴏʟʟʏᴡᴏᴏᴅ 🇮",
                 callback_data=f"check_playlist {type}|Bollywood",
             ),
             InlineKeyboardButton(
-                text=f"Hollywood",
+                text=f"ʜᴏʟʟʏᴡᴏᴏᴅ📽️",
                 callback_data=f"check_playlist {type}|Hollywood",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=f"Remix",
+                text=f"ᴅᴊ-ʀᴇᴍɪx💃",
                 callback_data=f"check_playlist {type}|Remix",
             ),
             InlineKeyboardButton(
-                text=f"Others", callback_data=f"check_playlist {type}|Others"
+                text=f"ᴏᴛʜᴇʀ🤔", callback_data=f"check_playlist {type}|Others"
             ),
         ],
         [InlineKeyboardButton(text="🗑 Close Menu", callback_data="close")],
