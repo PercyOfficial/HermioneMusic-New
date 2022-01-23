@@ -84,7 +84,7 @@ async def initiate_bot():
     )
     try:
         await app.send_message(LOG_GROUP_ID, "<b>✅ bot started successfully!</b>",)
-        await app.send_message(SUPPORT_GROUP_ID, f"**Anki Vector Music Started successfully**\n\n**Python:** `{pyver.split()[0]}`\n**Pyrogram:** `{pyrover}`\n**PyTgCalls:** `{pytgver}`\n**Loaded modules:** `{len(ALL_MODULES)}`")
+       # await app.send_message(SUPPORT_GROUP_ID, f"**Anki Vector Music Started successfully**\n\n**Python:** `{pyver.split()[0]}`\n**Pyrogram:** `{pyrover}`\n**PyTgCalls:** `{pytgver}`\n**Loaded modules:** `{len(ALL_MODULES)}`")
 #       await app.send_message(BOTS_GROUP_ID, f"**Anki Vector Music Started successfully**\n\n**Python:** `{pyver.split()[0]}`\n**Pyrogram:** `{pyrover}`\n**PyTgCalls:** `{pytgver}`\n**Loaded modules:** `{len(ALL_MODULES)}`")        
     except Exception as e:
         print(
