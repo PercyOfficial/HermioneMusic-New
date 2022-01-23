@@ -18,11 +18,11 @@ playlistdb_others = db.playlistothers
 
 async def _get_playlists(chat_id: int, type: str) -> Dict[str, int]:
     if type == "Rap":
-        xd = playlistdb_lofi
+        xd = playlistdb_rap
     elif type == "Sinhala":
-        xd = playlistdb_rock
+        xd = playlistdb_sinhala
     elif type == "Bts":
-        xd = playlistdb_sad
+        xd = playlistdb_bts
     elif type == "Party":
         xd = playlistdb_party
     elif type == "Bollywood":
@@ -30,7 +30,7 @@ async def _get_playlists(chat_id: int, type: str) -> Dict[str, int]:
     elif type == "Hollywood":
         xd = playlistdb_hollywood
     elif type == "Remix":
-        xd = playlistdb_punjabi
+        xd = playlistdb_remix
     elif type == "Others":
         xd = playlistdb_others
     _notes = await xd.find_one({"chat_id": chat_id})
@@ -62,11 +62,11 @@ async def save_playlist(chat_id: int, name: str, note: dict, type: str):
     _notes = await _get_playlists(chat_id, type)
     _notes[name] = note
     if type == "Rap":
-        xd = playlistdb_lofi
+        xd = playlistdb_rap
     elif type == "Sinhala":
-        xd = playlistdb_rock
+        xd = playlistdb_sinhala
     elif type == "Bts":
-        xd = playlistdb_sad
+        xd = playlistdb_bts
     elif type == "Party":
         xd = playlistdb_party
     elif type == "Bollywood":
@@ -74,7 +74,7 @@ async def save_playlist(chat_id: int, name: str, note: dict, type: str):
     elif type == "Hollywood":
         xd = playlistdb_hollywood
     elif type == "Remix":
-        xd = playlistdb_punjabi
+        xd = playlistdb_remix
     elif type == "Others":
         xd = playlistdb_others
     await xd.update_one(
@@ -86,11 +86,11 @@ async def delete_playlist(chat_id: int, name: str, type: str) -> bool:
     notesd = await _get_playlists(chat_id, type)
     name = name
     if type == "Rap":
-        xd = playlistdb_lofi
+        xd = playlistdb_rap
     elif type == "Sinhala":
-        xd = playlistdb_rock
+        xd = playlistdb_sinhala
     elif type == "Bts":
-        xd = playlistdb_sad
+        xd = playlistdb_bts
     elif type == "Party":
         xd = playlistdb_party
     elif type == "Bollywood":
@@ -98,7 +98,7 @@ async def delete_playlist(chat_id: int, name: str, type: str) -> bool:
     elif type == "Hollywood":
         xd = playlistdb_hollywood
     elif type == "Remix":
-        xd = playlistdb_punjabi
+        xd = playlistdb_remix
     elif type == "Others":
         xd = playlistdb_others
     if name in notesd:
