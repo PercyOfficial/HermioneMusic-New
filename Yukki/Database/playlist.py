@@ -2,22 +2,26 @@ from typing import Dict, List, Union
 
 from Yukki import db
 
-playlistdb_lofi = db.playlistlofi
-playlistdb_rock = db.playlistrock
-playlistdb_sad = db.playlistsad
+# playlistdb_lofi = db.playlistlofi
+playlistdb_rap = db.playlistrap
+# playlistdb_rock = db.playlistrock
+playlistdb_sinhala = db.playlistsinhala
+playlistdb_bts = db.playlistbts
+# playlistdb_sad = db.playlistsad
 playlistdb_party = db.playlistparty
 playlistdb_bollywood = db.playlistbollywood
 playlistdb_hollywood = db.playlisthollywood
-playlistdb_punjabi = db.playlistpunjabi
+# playlistdb_punjabi = db.playlistpunjabi
+playlistdb_remix = db.playlistremix
 playlistdb_others = db.playlistothers
 
 
 async def _get_playlists(chat_id: int, type: str) -> Dict[str, int]:
-    if type == "Lofi":
+    if type == "Rap":
         xd = playlistdb_lofi
-    elif type == "Weeb":
+    elif type == "Sinhala":
         xd = playlistdb_rock
-    elif type == "Sad":
+    elif type == "Bts":
         xd = playlistdb_sad
     elif type == "Party":
         xd = playlistdb_party
@@ -25,7 +29,7 @@ async def _get_playlists(chat_id: int, type: str) -> Dict[str, int]:
         xd = playlistdb_bollywood
     elif type == "Hollywood":
         xd = playlistdb_hollywood
-    elif type == "Punjabi":
+    elif type == "Remix":
         xd = playlistdb_punjabi
     elif type == "Others":
         xd = playlistdb_others
@@ -57,11 +61,11 @@ async def save_playlist(chat_id: int, name: str, note: dict, type: str):
     name = name
     _notes = await _get_playlists(chat_id, type)
     _notes[name] = note
-    if type == "Lofi":
+    if type == "Rap":
         xd = playlistdb_lofi
-    elif type == "Weeb":
+    elif type == "Sinhala":
         xd = playlistdb_rock
-    elif type == "Sad":
+    elif type == "Bts":
         xd = playlistdb_sad
     elif type == "Party":
         xd = playlistdb_party
@@ -69,7 +73,7 @@ async def save_playlist(chat_id: int, name: str, note: dict, type: str):
         xd = playlistdb_bollywood
     elif type == "Hollywood":
         xd = playlistdb_hollywood
-    elif type == "Punjabi":
+    elif type == "Remix":
         xd = playlistdb_punjabi
     elif type == "Others":
         xd = playlistdb_others
@@ -81,11 +85,11 @@ async def save_playlist(chat_id: int, name: str, note: dict, type: str):
 async def delete_playlist(chat_id: int, name: str, type: str) -> bool:
     notesd = await _get_playlists(chat_id, type)
     name = name
-    if type == "Lofi":
+    if type == "Rap":
         xd = playlistdb_lofi
-    elif type == "Weeb":
+    elif type == "Sinhala":
         xd = playlistdb_rock
-    elif type == "Sad":
+    elif type == "Bts":
         xd = playlistdb_sad
     elif type == "Party":
         xd = playlistdb_party
@@ -93,7 +97,7 @@ async def delete_playlist(chat_id: int, name: str, type: str) -> bool:
         xd = playlistdb_bollywood
     elif type == "Hollywood":
         xd = playlistdb_hollywood
-    elif type == "Punjabi":
+    elif type == "Remix":
         xd = playlistdb_punjabi
     elif type == "Others":
         xd = playlistdb_others
