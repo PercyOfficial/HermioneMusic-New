@@ -152,14 +152,14 @@ options = [
 ]
 
 options_Genre = [
-    "sɪɴʜᴀʟᴀ 🇱🇰",
-    "ʙᴛs 💜",
-    "ᴘᴀʀᴛʏ 🥳",
-    "ʀᴀᴘ ⚡",
-    "ʙᴏʟʟʏᴡᴏᴏᴅ 🇮🇪",
-    "ʜᴏʟʟʏᴡᴏᴏᴅ 📽️",
-    "ᴅᴊ-ʀᴇᴍɪx 💃",
-    "ᴏᴛʜᴇʀ 🤔",
+    "Sinhala",
+    "Bts",
+    "Party",
+    "Rap",
+    "Bollywood",
+    "Hollywood",
+    "Remix",
+    "Other",
 ]
 
 
